@@ -1,0 +1,16 @@
+.description{
+    height: 100px;
+    width: 800px;
+    margin-left: 50px;
+    margin-right: 220px;
+}
+.addFile{
+    margin-right: 300px;
+}
+.submit{
+   margin-right: 310px; 
+}
+.content{
+    color: brown;
+    margin-right: 300px;
+}

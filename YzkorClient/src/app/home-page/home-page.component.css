@@ -1,0 +1,28 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .memory-page{
+    width: 500px;
+    margin: 50px;
+    border-style: solid;
+    background-color: yellow;
+  }
+  .click-me{
+    margin-left: 350px;
+    padding: 10px;
+  }
+  img{
+    margin-left: 430px;
+  }

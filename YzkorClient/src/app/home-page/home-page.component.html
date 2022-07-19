@@ -1,0 +1,25 @@
+<div class="memory-page" (click)="registration()">
+  <h1 class="click-me">לחצו לפתיחת דף זכרון אישי</h1>
+  <img src="https://i0.wp.com/www.leidashketa.co.il/wp-content/uploads/2020/02/candle.jpg?fit=731%2C808&ssl=1" width="100" height="100">
+</div>
+<input type="text" #search (change)="filter(search.value)" placeholder="חפש"/>
+<table>
+    <tr>
+      <th>שם פרטי</th>
+      <th>שם משפחה</th>
+      <th>גיל</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let person of filterOptions" >
+         <td>
+             {{person.firstName}}
+         </td>
+         <td>
+            {{person.lastName}}
+        </td>
+        <td>
+          {{person.age}}
+        </td>
+        <td><a class="nav-link" routerLink="/memoryPage" [state]="{data: person}">עמוד זכרון</a></td>
+    </tr>
+   </table>

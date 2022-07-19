@@ -1,0 +1,37 @@
+<form [formGroup]="form" class="form-group" #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)" >
+    <input 
+    formControlName="firstname" 
+    class="form-control" 
+    type = "text" 
+    name = "firstName" 
+    placeholder = "שם פרטי" 
+    [ngClass]="{ 'is-invalid': submitted && f['firstname'].errors }" 
+    >
+    <div *ngIf="submitted && f['firstname'].errors" class="invalid-feedback">
+        <div *ngIf="f['firstname'].errors['required']">
+               אנא הכנס שם פרטי
+        </div>
+    </div>
+    <br/>
+    <input formControlName="lastname" 
+    class="form-control" 
+    type = "text" 
+    name = "lastName" 
+    placeholder = "שם משפחה"
+    [ngClass]="{ 'is-invalid': submitted && f['lastname'].errors }" 
+    >
+    <div *ngIf="submitted && f['lastname'].errors" class="invalid-feedback">
+        <div *ngIf="f['lastname'].errors['required']">אנא הכנס שם משפחה</div>
+    </div>
+    <br/>
+    <input class="form-control" type = "number" name = "age"
+     placeholder = "גיל" formControlName = "age"
+     [ngClass]="{ 'is-invalid': submitted && f['age'].errors }" 
+    >
+    <div *ngIf="submitted && f['age'].errors" class="invalid-feedback">
+      <div *ngIf="f['age'].errors['required']">אנא הכנס גיל</div>
+  </div>
+    <br/>
+    <input  class="btn btn-primary" type = "submit" value = "submit">
+ </form>
+ 

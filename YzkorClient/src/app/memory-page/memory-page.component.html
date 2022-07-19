@@ -1,0 +1,41 @@
+<a class="nav-link" routerLink="/homePage">עמוד הבית</a>
+<h1 class="content">אנא הנציחו את יקירינו</h1>
+<form [formGroup] = "form" #content = "ngForm" (ngSubmit) = "submit(content.value)" >
+       <textarea
+       class="description"
+       type="text"
+       formControlName = "content"
+       name = "content"
+       >
+       </textarea>
+       <br/>
+       <input
+       class="addFile"
+       type="file"
+       formControlName = "file"
+       name = "file"
+       (change) = 'uploadFile($event)'
+       >
+       <br/>
+       <br/>
+       <input
+       class="submit"
+       type="submit"
+       >
+</form>
+<button (click)="showDescriptions()">רענן הודעות</button>
+<div *ngFor="let d of descriptions" >
+<div *ngIf="d.file != null">
+       <div *ngIf="!d.file.includes('mp4')">
+              <img [src]="d.file" style="height: 300px; width:500px">
+       </div>
+       <div *ngIf="d.file.includes('mp4')">
+              <video width="320" height="240" controls>
+                     <source [src]="d.file"  type="video/mp4">
+              </video>
+       </div>
+</div>
+<div *ngIf="d.content != null">
+       <p>{{d.content}}</p>
+</div>
+</div>
